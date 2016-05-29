@@ -6,6 +6,8 @@ An easy way to turn Unsafe C strings into Rust String types and back.
 
 *rustc 1.9.0-nightly c9629d61c 2016-03-10) is the version I used!*
 
+### Functions
+
  ```rust
  turn_into_null_string(st: String)  -> *const c_char
  ```
@@ -23,10 +25,10 @@ An easy way to turn Unsafe C strings into Rust String types and back.
 
  ```rust
  null_to_str(s1: *const c_char) -> String
- ``` 
+ ```
  is `make_string` for people using FFI
 
- ### Example on how to load this into your project:
+### Example on how to load this into your project:
 
 **Cargo.toml**
 
