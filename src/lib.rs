@@ -22,7 +22,7 @@ fn it_reads_and_modifies_both_cstr_and_rust_str() {
     let null_test_str    = make_string(null_string);
     let test_string      = "string to compare".to_string();
 
-    assert_eq!(test_string, nul_test_str);
+    assert_eq!(test_string, null_test_str);
 }
 
 //
