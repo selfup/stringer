@@ -2,10 +2,6 @@
 
 An easy way to turn Unsafe C strings into Rust String types and back.
 
-*There is unsafe code in this crate. Please use a nightly version of rust*
-
-*rustc 1.9.0-nightly c9629d61c 2016-03-10) is the version I used!*
-
 ### Functions
 
  ```rust
