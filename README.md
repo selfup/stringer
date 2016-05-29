@@ -20,13 +20,13 @@ Takes a CString and returns a Rust String type.
 ```rust
 into_null(st: String)  -> *const c_char
 ```
-is `turn_into_null_string` when using FFI as a last function call
+Is `turn_into_null_string` as a last function call, when using `ffi`.
 # 
 ### null_to_str (ffi) 
 ```rust
 null_to_str(s1: *const c_char) -> String
 ```
-is `make_string` when using FFI as a last function call
+Is `make_string` as a last function call, when using `ffi`.
 # 
 ### Example on how to load this into your project:
 
