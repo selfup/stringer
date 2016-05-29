@@ -34,14 +34,13 @@ An easy way to turn Unsafe C strings into Rust String types and back.
 
 ```rust
 [dependencies]
-// ...
 stringer = "*"
 ```
 
 **In the file you need the functions**
 
  ```rust
- extern crate stringer;
+extern crate stringer;
 use stringer::*;
  ```
 
