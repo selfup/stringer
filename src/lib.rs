@@ -19,7 +19,7 @@ fn it_reads_and_modifies_both_cstr_and_rust_str() {
     let static_to_string = "string to compare".to_string();
     let null_string      = turn_into_null_string(static_to_string);
 
-    let nul_test_str     = make_string(null_string);
+    let null_test_str    = make_string(null_string);
     let test_string      = "string to compare".to_string();
 
     assert_eq!(test_string, nul_test_str);
