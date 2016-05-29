@@ -24,19 +24,3 @@ fn it_reads_and_modifies_both_cstr_and_rust_str() {
     
     assert_eq!(test_string, null_test_str);
 }
-
-// *******************************************************
-// THESE EXTERN FUNCTIONS ARE FOR PEOPLE WHO ARE USING FFI
-// *******************************************************
-
-pub extern fn into_null(st: String)  -> *const c_char {
-    let concated_string = CString::new(st).unwrap();
-    concated_string.into_raw()
-}
-
-pub extern fn null_to_str(s1: *const c_char) -> String {
-    let cstr          = unsafe { CStr::from_ptr(s1) };
-    let string        = cstr.to_str().unwrap();
-    let return_string = string.to_string();
-    return_string
-}

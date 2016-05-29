@@ -16,18 +16,6 @@ make_string(s1: *const c_char) -> String
 ```
 Takes a CString and returns a Rust String type.
 # 
-### into_null (ffi)
-```rust
-into_null(st: String)  -> *const c_char
-```
-Is `turn_into_null_string` as a last function call, when using `ffi`.
-# 
-### null_to_str (ffi) 
-```rust
-null_to_str(s1: *const c_char) -> String
-```
-Is `make_string` as a last function call, when using `ffi`.
-# 
 ### Example on how to load this into your project:
 
 **Cargo.toml**
