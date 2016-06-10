@@ -22,7 +22,7 @@ Takes a `*const c_char` and returns a Rust `String` type.
 
 ```rust
 [dependencies]
-stringer = "*"
+stringer = "0.1.6"
 ```
 
 **In the file you need the functions**
