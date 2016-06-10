@@ -1,6 +1,6 @@
 [package]
 name = "stringer"
-version = "0.1.5"
+version = "0.1.6"
 authors = ["Regis <boudinot.regis@yahoo.com>"]
 description = "An easy way to turn an Unsafe *const c_char into a Rust String type and return a pointer."
 homepage = "https://github.com/selfup/stringer"
