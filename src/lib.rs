@@ -2,9 +2,9 @@ use std::ffi::CStr;
 use std::ffi::CString;
 use std::os::raw::c_char;
 
-pub fn turn_into_null_string(st: String)  -> *const c_char {
+pub fn turn_into_pointer(st: String)  -> CString {
     let concated_string = CString::new(st).unwrap();
-    concated_string.into_raw()
+    unsafe { CString::from_raw(concated_string.into_raw()) }
 }
 
 pub fn make_string(s1: *const c_char) -> String {
@@ -12,15 +12,4 @@ pub fn make_string(s1: *const c_char) -> String {
     let string        = cstr.to_str().unwrap();        // &str
     let return_string = string.to_string();            // collections::string::String
     return_string
-}
-
-#[test]
-fn it_reads_and_modifies_both_cstr_and_rust_str() {
-    let static_to_string = "string to compare".to_string();
-    let null_string      = turn_into_null_string(static_to_string);
-
-    let null_test_str    = make_string(null_string);
-    let test_string      = "string to compare".to_string();
-    
-    assert_eq!(test_string, null_test_str);
 }

@@ -1,21 +1,21 @@
 # Stringer
 
-An easy way to turn unsafe CStrings into Rust String types and back.
+An easy way to turn an unsafe `*const c_char` into a Rust String type and return a pointer for FFI.
 
 ## Functions
 
-### turn_into_null_string
+### turn_into_pointer
 ```rust
-turn_into_null_string(st: String)  -> *const c_char
+turn_into_pointer(st: String)  -> CString
 ```
 Takes a Rust String type and returns a CString.
-# 
+#
 ### make_string
 ```rust
 make_string(s1: *const c_char) -> String
 ```
-Takes a CString and returns a Rust String type.
-# 
+Takes a `*const c_char` and returns a Rust `String` type.
+#
 ### Example on how to load this into your project:
 
 **Cargo.toml**
@@ -30,16 +30,4 @@ stringer = "*"
 ```rust
 extern crate stringer;
 use stringer::*;
-```
-
-**Then you can just call them as normal as long as you feed the functions the right types**
-
-```rust
-let unsafe_string = CString::new("unsafe string!").unwrap().into_raw();
-// unsafe_string is a *const c_char
-make_string(unsafe_string);
-
-let safe_string   = "some safe string".to_str();
-// safe_string is a rust String type 
-turn_into_null_string(safe_string);
 ```
