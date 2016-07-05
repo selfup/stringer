@@ -6,13 +6,13 @@ An easy way to turn an unsafe `*const c_char` into a Rust String type and return
 
 ### turn_into_pointer
 ```rust
-turn_into_pointer(st: String)  -> CString
+turn_into_pointer(string: String)  -> CString
 ```
 Takes a Rust String type and returns a CString.
 #
 ### make_string
 ```rust
-make_string(s1: *const c_char) -> String
+make_string(unsafe_string: *const c_char) -> String
 ```
 Takes a `*const c_char` and returns a Rust `String` type.
 #
@@ -31,3 +31,9 @@ stringer = "0.1.6"
 extern crate stringer;
 use stringer::*;
 ```
+### Things to consider
+
+Due to the nature of what this library is doing:
+
+* This code is unsafe
+* Use at your own risk
