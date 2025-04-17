@@ -4,17 +4,17 @@ An easy way to turn an unsafe `*const c_char` into a Rust String type and return
 
 ## Functions
 
-### turn_into_pointer
+### string_to_cstring
 ```rust
-turn_into_pointer(string: String)  -> CString
+string_to_cstring(string: String) -> Result<CString, NulError>
 ```
-Takes a Rust String type and returns a CString.
+Takes a `String` and returns a `CString`.
 #
-### make_string
+### cstr_to_string
 ```rust
-make_string(unsafe_string: *const c_char) -> String
+cstr_to_string(unsafe_string: *const c_char) -> Result<String, Utf8Error>
 ```
-Takes a `*const c_char` and returns a Rust `String` type.
+Takes a `*const c_char` and returns a `String`.
 #
 ### Example on how to load this into your project:
 
@@ -22,7 +22,7 @@ Takes a `*const c_char` and returns a Rust `String` type.
 
 ```rust
 [dependencies]
-stringer = "0.1.6"
+stringer = "0.2.0"
 ```
 
 **In the file you need the functions**
